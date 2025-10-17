@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3.js Bar Chart</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- D3.js CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- FreeCodeCamp Test -->
+     <script defer src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <!-- Script -->
+    <script defer src="script.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <h1 class="text-3xl font-bold text-gray-900">Data Visualization</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-500">Marco Insabato</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Title Section -->
+        <div class="text-center mb-8">
+            <h2 id="title" class="text-2xl font-semibold text-gray-800 mb-2">Interactive Bar Chart</h2>
+            <p class="text-gray-600">Hover over bars to see detailed information</p>
+        </div>
+
+        <!-- Chart Container -->
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Chart Area -->
+                <div class="flex-1">
+                    <div class="bg-gray-50 rounded-lg p-4 min-h-[500px] flex items-center justify-center">
+                        <div id="chart-container" class="w-full h-full">
+                            <!-- D3.js chart will be rendered here -->
+                            <div class="text-center text-gray-500">
+                                <div class="animate-pulse">
+                                    <div class="h-4 bg-gray-300 rounded w-1/4 mx-auto mb-2"></div>
+                                    <div class="h-3 bg-gray-300 rounded w-1/6 mx-auto"></div>
+                                </div>
+                                <p class="mt-4">Loading chart...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Panel -->
+                <div class="lg:w-80">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Chart Information</h3>
+                        
+                        <!-- Data Summary -->
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Total Items:</span>
+                                <span id="total-items" class="text-sm font-medium text-gray-800">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Max Value:</span>
+                                <span id="max-value" class="text-sm font-medium text-gray-800">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Min Value:</span>
+                                <span id="min-value" class="text-sm font-medium text-gray-800">-</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Avg Increase:</span>
+                                <span id="avg-increase" class="text-sm font-medium text-gray-800">-</span>
+                            </div>
+                        </div>
+
+                        <!-- Selected Item Info -->
+                        <div class="border-t border-blue-200 pt-4">
+                            <h4 class="text-sm font-medium text-gray-700 mb-2">Blocked Item</h4>
+                            <div id="blocked-info" class="text-sm text-gray-600">
+                                Click a bar to block details
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="mt-4 bg-white rounded-lg p-4 border border-gray-200">
+                        <h4 class="text-sm font-medium text-gray-700 mb-3">Current Selection</h4>
+                        <div id="tooltip" class="text-sm text-gray-600 hidden">
+                        </div>
+                    </div>
+                    <!-- Comparison Table -->
+                    <div class="mt-4 bg-white rounded-lg p-4 border border-gray-200">
+                        <h4 class="text-sm font-medium text-gray-700 mb-3">Comparison</h4>
+                        <div id="comparison" class="text-sm text-gray-600">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="text-center text-sm text-gray-500">
+                <p>FreeCodeCamp Data Visualization Project</p>
+                <p class="mt-1">Built with D3.js v7 and Tailwind CSS</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
